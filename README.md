@@ -1,2 +1,2 @@
 # Javascript-Calculator
-Calculator app for freecodecamp. A basic javascript calculator.
+This is a basic javascript calculator I created as a challenge in freecodecamp.
