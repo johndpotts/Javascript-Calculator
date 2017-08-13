@@ -27,10 +27,14 @@ margin-bottom:10px;
   font-family: sans-serif;
 }
 button{
-heght:50px;
+height:50px;
 width:52px;
   font-weight: bold;
   font-family: sans-serif;
   font-size: 20px;
   margin:auto;
+}
+
+.button_hover{
+  background-color: #222;
 }

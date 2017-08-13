@@ -1,4 +1,5 @@
-var display=document.getElementById('display'),
+$(document).ready(function() {
+  var display=document.getElementById('display'),
 oneButton = document.getElementById('one'),
 twoButton= document.getElementById('two'),
 threeButton= document.getElementById('three'),
@@ -24,6 +25,8 @@ sqrtButton = document.getElementById('sqrt'),
 posNegButton = document.getElementById('pos_neg'),
 reciprocalButton = document.getElementById('reciprocal'),
 value="",plusValue=0, minusValue=0,dividedValue=0,timesValue=0;
+
+$('.btn-fx').hover(function(){$(this).toggleClass('button_hover');});
 
 posNegButton.onclick=function(){if (value.charAt(0)=="-"){
   value=value.slice(1,value.length)
@@ -195,3 +198,5 @@ function updateDisplay(){
   else if (timesValue!=0){display.innerHTML=(timesValue);}
   else{display.innerHTML="0";}
 }
+
+});
