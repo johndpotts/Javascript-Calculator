@@ -1,6 +1,7 @@
 body{
-  background-color: #FFF;
-margin-top: 50px;
+  background-image: url("pencils-wallpapers.jpg");
+  background-size:cover;
+margin-top: 100px;
 }
 .calculator{
   padding: 10px;
