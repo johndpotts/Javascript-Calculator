@@ -182,12 +182,12 @@ var reciprocalFunction = function(){value = (1/Number(value)).toString(); update
 
 var percentFunction = function(){value = (Number(value)/100).toString(); updateDisplay();};
 
-posNegButton.onclick= posNegFunction();
-percentButton.onclick=percentFunction();
-squareButton.onclick=squareFunction();
-reciprocalButton.onclick=reciprocalFunction();
-sqrtButton.onclick=sqrtFunction();
-deleteButton.onclick=delFunction()
+posNegButton.onclick=function(){posNegFunction();};
+percentButton.onclick=function(){percentFunction();};
+squareButton.onclick=function(){squareFunction();};
+reciprocalButton.onclick=function(){reciprocalFunction();};
+sqrtButton.onclick=function(){sqrtFunction();};
+deleteButton.onclick=function(){delFunction();};
 oneButton.onclick=function(){value +="1"; updateDisplay();}
 twoButton.onclick=function(){value +="2"; updateDisplay();}
 threeButton.onclick=function(){value +="3"; updateDisplay();}
@@ -198,13 +198,13 @@ sevenButton.onclick=function(){value +="7"; updateDisplay();}
 eightButton.onclick=function(){value +="8"; updateDisplay();}
 nineButton.onclick=function(){value +="9"; updateDisplay();}
 zeroButton.onclick=function(){value +="0"; updateDisplay();}
-plusButton.onclick= plusFunction();
-minusButton.onclick=minusFunction();
-dividedButton.onclick= dividedFunction();
-timesButton.onclick=timesFunction();
-equalsButton.onclick=equalsFunction();
-clearButton.onclick=clearFunction();
-clearEntryButton.onclick=clearEntryFunction();
+plusButton.onclick=function(){plusFunction();};
+minusButton.onclick=function(){minusFunction();};
+dividedButton.onclick= function(){dividedFunction();};
+timesButton.onclick=function(){timesFunction();};
+equalsButton.onclick=function(){equalsFunction();};
+clearButton.onclick=function(){clearFunction();};
+clearEntryButton.onclick=function(){clearEntryFunction();};
 decimalButton.onclick=function(){value +="."; updateDisplay();};
 
 
