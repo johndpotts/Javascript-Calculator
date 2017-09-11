@@ -1,4 +1,11 @@
+//floating point issues are dealt with multiplying & rounding
+//values to add, subtract etc are temporarily stored as "plusValue", etc.
+
+
+
+
 $(document).ready(function() {
+//declare variables
   var display=document.getElementById('display'),
 oneButton = document.getElementById('one'),
 twoButton= document.getElementById('two'),
@@ -30,24 +37,24 @@ value="",plusValue=0, minusValue=0,dividedValue=0,timesValue=0;
 
 var plusFunction = function(){
   if (plusValue!=0){
-      plusValue= Number(value)+plusValue;
+      plusValue= (Math.round((Number(value)+plusValue)*10000000)/10000000);
       value="";
       updateDisplay();
   }
   else if(minusValue!=0){
-    plusValue=minusValue-Number(value);
+    plusValue=(Math.round((minusValue-Number(value))*10000000)/10000000);
       value= "";
       minusValue=0;
         updateDisplay();
     }
     else if(dividedValue!=0){
-      plusValue= dividedValue/Number(value);
+      plusValue= (Math.round((dividedValue/Number(value))*10000000)/10000000);
 value="";
 dividedValue=0;
           updateDisplay();
     }
       else if(timesValue!=0){
-        plusValue= timesValue*Number(value);
+        plusValue= (Math.round((timesValue*Number(value))*10000000)/10000000);
 value="";
 timesValue=0;
             updateDisplay();
@@ -59,24 +66,24 @@ timesValue=0;
 
 var minusFunction = function(){
   if (plusValue!=0){
-      minusValue= Number(value)+plusValue;
+      minusValue= (Math.round((Number(value)+plusValue)*10000000)/10000000).toString();
       value="";
         plusValue=0;
       updateDisplay();
   }
   else if(minusValue!=0){
-    minusValue=minusValue-Number(value);
+    minusValue=(Math.round((minusValue-Number(value))*10000000)/10000000);
       value= "";
         updateDisplay();
     }
     else if(dividedValue!=0){
-      minusValue= dividedValue/Number(value);
+      minusValue= (Math.round((dividedValue/Number(value))*10000000)/10000000);
 value="";
 dividedValue=0;
           updateDisplay();
     }
       else if(timesValue!=0){
-        minusValue= timesValue*Number(value);
+        minusValue= (Math.round((timesValue*Number(value))*10000000)/10000000);
 value="";
 timesValue=0;
             updateDisplay();
@@ -87,24 +94,24 @@ timesValue=0;
 
 var dividedFunction =function(){
          if (plusValue!=0){
-             dividedValue= Number(value)+plusValue;
+             dividedValue= (Math.round((Number(value)+plusValue)*10000000)/10000000)
              value="";
                plusValue=0;
              updateDisplay();
          }
          else if(minusValue!=0){
-           dividedValue=minusValue-Number(value);
+           dividedValue=(Math.round((minusValue-Number(value))*10000000)/10000000);
              value= "";
              minusValue=0;
                updateDisplay();
            }
            else if(dividedValue!=0){
-             dividedValue= dividedValue/Number(value);
+             dividedValue= (Math.round((dividedValue/Number(value))*10000000)/10000000);
        value="";
                  updateDisplay();
            }
              else if(timesValue!=0){
-               dividedValue= timesValue*Number(value);
+               dividedValue= (Math.round((timesValue*Number(value))*10000000)/10000000);
        value="";
        timesValue=0;
                    updateDisplay();
@@ -116,47 +123,48 @@ var dividedFunction =function(){
 var timesFunction = function(){
 
   if (plusValue!=0){
-      timesValue= Number(value)+plusValue;
+      timesValue= (Math.round((Number(value)+plusValue)*10000000)/10000000)
       plusValue=0;
       value="";
       updateDisplay();
   }
   else if(minusValue!=0){
-    timesValue=minusValue-Number(value);
+    timesValue=(Math.round((minusValue-Number(value))*10000000)/10000000);
       value= "";
       minusValue=0;
         updateDisplay();
     }
     else if(dividedValue!=0){
-      timesValue= dividedValue/Number(value);
+      timesValue= (Math.round((dividedValue/Number(value))*10000000)/10000000);
 value="";
 dividedValue=0;
           updateDisplay();
     }
       else if(timesValue!=0){
-        timesValue= timesValue*Number(value);
+        timesValue= (Math.round((timesValue*Number(value))*10000000)/10000000);
 value="";
             updateDisplay();
          }
          else
          {timesValue=Number(value); value=""; updateDisplay();}
        }
+       //calculate results and deal with floating point issues
 var equalsFunction = function(){
               if (plusValue!=0){
-                  value= (Number(value)+plusValue).toString();
+                  value= (Math.round((Number(value)+plusValue)*10000000)/10000000).toString();
                   updateDisplay();
                 plusValue=0;
               }
               else if(minusValue!=0){
-                value= (minusValue-Number(value)).toString();
+                value= (Math.round((minusValue-Number(value))*10000000)/10000000).toString();
                     updateDisplay();
                 minusValue=0;  }
                 else if(dividedValue!=0){
-                  value= (dividedValue/Number(value)).toString();
+                  value= (Math.round((dividedValue/Number(value))*10000000)/10000000).toString();
                       updateDisplay();
                 dividedValue=0;  }
                   else if(timesValue!=0){
-                    value= (timesValue*Number(value)).toString();
+                    value= (Math.round((timesValue*Number(value))*10000000)/10000000).toString();
                         updateDisplay();
                     timesValue=0;  }
             }
@@ -174,11 +182,11 @@ var clearEntryFunction= function(){
 
 var delFunction= function delFunction(){ value= value.substring(0,value.length-1); updateDisplay();};
 
-var squareFunction = function(){value = Math.pow(Number(value),2).toString(); updateDisplay();};
+var squareFunction = function(){value = (Math.round((Number(value)*Number(value))*10000000)/10000000).toString(); updateDisplay();};
 
 var sqrtFunction = function(){value=Math.sqrt(Number(value)).toString(); updateDisplay();};
 
-var reciprocalFunction = function(){value = (1/Number(value)).toString(); updateDisplay();};
+var reciprocalFunction = function(){value = (Math.round((1/Number(value))*10000000)/10000000).toString(); updateDisplay();};
 
 var percentFunction = function(){value = (Number(value)/100).toString(); updateDisplay();};
 
@@ -228,17 +236,26 @@ clearButton.onclick=function(){
 clearEntryButton.onclick=function(){
   window.navigator.vibrate(150); clearEntryFunction();};
 decimalButton.onclick=function(){
-  window.navigator.vibrate(150); value +="."; updateDisplay();};
+  window.navigator.vibrate(150);
+  if (value.indexOf(".")>-1){}
+  else {value +="."; updateDisplay();}
+};
 
 
 
 
-
+//keep numbers from popping off screen.
 function updateDisplay(){
   if(value){
-    if (value.length>6){
-      let shortenedValue=value.slice((value.length-6),value.length);
-      display.innerHTML=shortenedValue;
+if (value.length>24){
+  let topValue=value.slice(0,12);
+  let bottomValue=value.slice(12,24);
+  display.innerHTML=topValue+"<br/>"+bottomValue;
+}
+    else if (value.length>12){
+      let topValue=value.slice(0,12);
+      let bottomValue=value.slice((12),value.length);
+      display.innerHTML=topValue+"<br/>"+bottomValue;
     }
     else{display.innerHTML=(value);}
   }
@@ -249,6 +266,7 @@ function updateDisplay(){
   else{display.innerHTML="0";}
 }
 
+//enables keyboard input
 $(document).keydown(function(event){
   switch(event.which){
     case 48:
@@ -343,7 +361,7 @@ $(document).keydown(function(event){
     reciprocalFunction();
     break;
     default:
-    alert(event.which);
+
     break;
   }
 });
