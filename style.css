@@ -45,6 +45,6 @@ button:active{
   margin-bottom:3px;
 }
 
-.button_hover{
+button:hover{
   background-color: #555;
 }

@@ -26,7 +26,7 @@ posNegButton = document.getElementById('pos_neg'),
 reciprocalButton = document.getElementById('reciprocal'),
 value="",plusValue=0, minusValue=0,dividedValue=0,timesValue=0;
 
-$('.btn-fx').hover(function(){$(this).toggleClass('button_hover');});
+
 
 var plusFunction = function(){
   if (plusValue!=0){
