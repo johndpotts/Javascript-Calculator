@@ -182,30 +182,53 @@ var reciprocalFunction = function(){value = (1/Number(value)).toString(); update
 
 var percentFunction = function(){value = (Number(value)/100).toString(); updateDisplay();};
 
-posNegButton.onclick=function(){posNegFunction();};
-percentButton.onclick=function(){percentFunction();};
-squareButton.onclick=function(){squareFunction();};
-reciprocalButton.onclick=function(){reciprocalFunction();};
-sqrtButton.onclick=function(){sqrtFunction();};
+posNegButton.onclick=function(){
+  window.navigator.vibrate(150); posNegFunction();};
+percentButton.onclick=function(){
+  window.navigator.vibrate(150); percentFunction();};
+squareButton.onclick=function(){
+  window.navigator.vibrate(150); squareFunction();};
+reciprocalButton.onclick=function(){
+  window.navigator.vibrate(150); reciprocalFunction();};
+sqrtButton.onclick=function(){
+  window.navigator.vibrate(150); sqrtFunction();};
 deleteButton.onclick=function(){delFunction();};
-oneButton.onclick=function(){value +="1"; updateDisplay();}
-twoButton.onclick=function(){value +="2"; updateDisplay();}
-threeButton.onclick=function(){value +="3"; updateDisplay();}
-fourButton.onclick=function(){value +="4"; updateDisplay();}
-fiveButton.onclick=function(){value +="5"; updateDisplay();}
-sixButton.onclick=function(){value +="6"; updateDisplay();}
-sevenButton.onclick=function(){value +="7"; updateDisplay();}
-eightButton.onclick=function(){value +="8"; updateDisplay();}
-nineButton.onclick=function(){value +="9"; updateDisplay();}
-zeroButton.onclick=function(){value +="0"; updateDisplay();}
-plusButton.onclick=function(){plusFunction();};
-minusButton.onclick=function(){minusFunction();};
-dividedButton.onclick= function(){dividedFunction();};
-timesButton.onclick=function(){timesFunction();};
-equalsButton.onclick=function(){equalsFunction();};
-clearButton.onclick=function(){clearFunction();};
-clearEntryButton.onclick=function(){clearEntryFunction();};
-decimalButton.onclick=function(){value +="."; updateDisplay();};
+oneButton.onclick=function(){
+  window.navigator.vibrate(150); value +="1"; updateDisplay();}
+twoButton.onclick=function(){
+  window.navigator.vibrate(150); value +="2"; updateDisplay();}
+threeButton.onclick=function(){
+  window.navigator.vibrate(150); value +="3"; updateDisplay();}
+fourButton.onclick=function(){
+  window.navigator.vibrate(150); value +="4"; updateDisplay();}
+fiveButton.onclick=function(){
+  window.navigator.vibrate(150); value +="5"; updateDisplay();}
+sixButton.onclick=function(){
+  window.navigator.vibrate(150); value +="6"; updateDisplay();}
+sevenButton.onclick=function(){
+  window.navigator.vibrate(150); value +="7"; updateDisplay();}
+eightButton.onclick=function(){
+  window.navigator.vibrate(150); value +="8"; updateDisplay();}
+nineButton.onclick=function(){
+  window.navigator.vibrate(150); value +="9"; updateDisplay();}
+zeroButton.onclick=function(){
+  window.navigator.vibrate(150); value +="0"; updateDisplay();}
+plusButton.onclick=function(){
+  window.navigator.vibrate(150); plusFunction();};
+minusButton.onclick=function(){
+  window.navigator.vibrate(150); minusFunction();};
+dividedButton.onclick= function(){
+  window.navigator.vibrate(150); dividedFunction();};
+timesButton.onclick=function(){
+  window.navigator.vibrate(150); timesFunction();};
+equalsButton.onclick=function(){
+  window.navigator.vibrate(150); equalsFunction();};
+clearButton.onclick=function(){
+  window.navigator.vibrate(150); clearFunction();};
+clearEntryButton.onclick=function(){
+  window.navigator.vibrate(150); clearEntryFunction();};
+decimalButton.onclick=function(){
+  window.navigator.vibrate(150); value +="."; updateDisplay();};
 
 
 
